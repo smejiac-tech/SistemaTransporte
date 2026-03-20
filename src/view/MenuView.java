@@ -1,10 +1,18 @@
 package view;
 
 import java.util.Scanner;
+import service.VehiculoService;
+import service.PersonaService;
+import service.TicketService;
 
 public class MenuView {
 
     private Scanner sc = new Scanner(System.in);
+
+    // 🔥 conexiones con la capa service
+    private VehiculoService vehiculoService = new VehiculoService();
+    private PersonaService personaService = new PersonaService();
+    private TicketService ticketService = new TicketService();
 
     public void mostrarMenu() {
         int opcion;
@@ -48,22 +56,22 @@ public class MenuView {
     }
 
     private void registrarVehiculo() {
-        System.out.println("Función en construcción...");
+        vehiculoService.registrarVehiculo();
     }
 
     private void registrarPasajero() {
-        System.out.println("Función en construcción...");
+        personaService.registrarPasajero();
     }
 
     private void registrarConductor() {
-        System.out.println("Función en construcción...");
+        personaService.registrarConductor();
     }
 
     private void venderTicket() {
-        System.out.println("Función en construcción...");
+        ticketService.venderTicket();
     }
 
     private void mostrarReportes() {
-        System.out.println("Función en construcción...");
+        ticketService.mostrarReportes();
     }
 }
